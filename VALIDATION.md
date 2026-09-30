@@ -1,13 +1,11 @@
-# Validation record
+# Validation
 
 Checked on 2026-09-30 with Python 3.11 on Windows.
 
-Local pytest result: `8 passed, 2 skipped in 5.46s`. Skipped cases require Windows symlink creation privileges; Linux CI exercises those cases. Editable installation, CLI help and wheel construction succeeded. Only synthetic fixtures were used.
+Before these repairs: 10 collected tests. After: 20 collected, 18 passed and 2 skipped. The skipped cases require Windows symlink creation privileges. Linux CI runs those cases. New bug regressions were run against the previous implementation and observed failing before their fixes; the XML test strengthens existing escaping coverage.
 
-The checked-in reports under `examples/` come from actual CLI runs against the synthetic fixtures. Browser reports may contain the temporary loopback port used for that run; adjust the reproduction URL to your running fixture server.
+Real Docker tests cover delayed readiness, captured output, anonymous-volume removal, command failure, timeout, network isolation and host-environment separation.
 
-Source review and a staged-file pattern scan found no live credential formats, private user paths or accidentally tracked environment files. This is a scoped check, not a guarantee that every possible secret format is detectable.
+The current wheel builds with `python -m pip wheel --no-deps .` using pip's isolated build environment. CLI help succeeds. German README validation with schreibwaechter and locale de-CH reports 0 errors and 0 warnings. Only synthetic test inputs were used.
 
-Docker/browser integration tests ran locally where applicable.
-
-See the Actions tab for independent Windows and Linux CI results.
+CI results are available at [GitHub Actions](https://github.com/beweiskette/freshclone/actions). See SECURITY.md for report contents and runtime boundaries.

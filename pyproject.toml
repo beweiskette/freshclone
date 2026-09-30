@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "freshclone"
 version = "0.1.0"
-description = "Local, explicit verification for developers"
+description = "Verify README shell commands in disposable, restricted Docker containers"
 readme = "README.md"
 requires-python = ">=3.11"
 license = "MIT"
@@ -20,9 +20,9 @@ freshclone = "freshclone.cli:main"
 [tool.setuptools.packages.find]
 where = ["src"]
 
-[tool.setuptools.package-data]
-installreceipt = ["scripts/*.ps1"]
-
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 markers = ["integration: requires Docker or a Chromium browser"]
+
+[project.urls]
+Repository = "https://github.com/beweiskette/freshclone"

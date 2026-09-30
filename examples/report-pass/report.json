@@ -7,15 +7,23 @@
       "block": 1,
       "readme_line": 6,
       "status": "pass",
-      "exit_code": 0
+      "exit_code": 0,
+      "stdout": "",
+      "stdout_truncated": false,
+      "stderr": "",
+      "stderr_truncated": false
     },
     {
       "block": 2,
       "readme_line": 10,
       "status": "pass",
-      "exit_code": 0
+      "exit_code": 0,
+      "stdout": "",
+      "stdout_truncated": false,
+      "stderr": "",
+      "stderr_truncated": false
     }
   ],
   "cleanup": true,
-  "logs": "not captured"
+  "logs": "First 64 KiB per stream per block; output may contain sensitive data"
 }

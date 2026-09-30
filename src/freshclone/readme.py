@@ -5,10 +5,11 @@ def blocks(text):
     result, fence, code, start, accepted = [], None, [], 0, False
     for line_no, line in enumerate(text.splitlines(keepends=True), 1):
         if fence is None:
-            match = re.match(r'^ {0,3}(`{3,}|~{3,})([\w-]*)\s*$', line.rstrip())
+            match = re.match(r'^ {0,3}(`{3,}|~{3,})([^\r\n]*)$', line.rstrip())
             if match:
                 fence = match[1]
-                accepted = match[2].lower() in ('bash', 'sh', 'shell')
+                info = match[2].strip().split()
+                accepted = bool(info) and info[0].lower() in ('bash', 'sh', 'shell')
                 start, code = line_no + 1, []
         elif re.match(r'^ {0,3}' + re.escape(fence[0]) + '{' + str(len(fence)) + r',}\s*$', line.rstrip()):
             if accepted:
