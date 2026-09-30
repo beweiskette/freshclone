@@ -1,0 +1,21 @@
+{
+  "schema": 1,
+  "status": "pass",
+  "network": "disabled",
+  "steps": [
+    {
+      "block": 1,
+      "readme_line": 6,
+      "status": "pass",
+      "exit_code": 0
+    },
+    {
+      "block": 2,
+      "readme_line": 10,
+      "status": "pass",
+      "exit_code": 0
+    }
+  ],
+  "cleanup": true,
+  "logs": "not captured"
+}
